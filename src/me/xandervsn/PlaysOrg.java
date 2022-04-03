@@ -26,23 +26,11 @@ public class PlaysOrg {
 
 			System.out.println(":3");
 			input = scanner.nextLine();
-			path = "C:\\Users\\stefa\\eclipse-workspace\\References\\Plays\\" + input + "_TXT_FolgerShakespeare.txt";
+			path = input + ".txt";
 			String txt = Files.readString(Paths.get(path));
-			
-			if(txt.contains("Characters in the Play")) {
-				for (int i = 0; i < txt.length(); i++) {
-					if((txt.charAt(i) == 'A' && txt.charAt(i+1) == 'C' && txt.charAt(i+2) == 'T' && txt.charAt(i+3) == ' ' && txt.charAt(i+4) == '1') ||
-					   (txt.charAt(i) == 'I' && txt.charAt(i+1) == 'N' && txt.charAt(i+2) == 'D' && txt.charAt(i+3) == 'U' && txt.charAt(i+4) == 'C') ||
-					   (txt.charAt(i) == 'P' && txt.charAt(i+1) == 'R' && txt.charAt(i+2) == 'O' && txt.charAt(i+3) == 'L' && txt.charAt(i+4) == 'O') ||
-					   (txt.charAt(i) == 'A' && txt.charAt(i+1) == 'C' && txt.charAt(i+2) == 'T' && txt.charAt(i+3) == ' ' && txt.charAt(i+4) == '1') ) {
-						start = i;
-						output(txt, start);
-						return;
-					}
-				}
-			}else {
-				play = false;
-			}
+			start = 0;
+			output(txt, start);
+			return;
 		}
 	}
 	
